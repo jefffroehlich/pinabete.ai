@@ -9,9 +9,13 @@ import cors from 'cors';
 
 const app = express();
 const port = 3000;
-app.use(cors({ origin: 'https://jefffroehlich.github.io/' }));
+app.use(cors({ origin: 'https://jefffroehlich.github.io/pinabete.ai' }));
 app.use(express.json());
 app.listen(port, () => console.log('Example app listening on port 3000!'));
+
+app.get('/', (req, res) => {
+  res.send('serving is running successfully');
+});
 
 app.post('/sendUserInput', async (req, res) => {
   const dataFromClientSide = req.body.message;
