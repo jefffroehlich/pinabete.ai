@@ -20,7 +20,7 @@ async function sendData(userInput) {
   clientSideMessage.push({ role: 'user', content: userInput });
 
   const response = await fetch(
-    'https://pinabete-ai.onrender.com:3000/sendUserInput',
+    'https://pinabete-ai.onrender.com:10000/sendUserInput',
     {
       method: 'POST',
       body: JSON.stringify({
