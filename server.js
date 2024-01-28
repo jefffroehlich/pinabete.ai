@@ -9,7 +9,7 @@ import cors from 'cors';
 
 const app = express();
 const port = 3000;
-app.use(cors({ origin: 'https://pinabete-ai.onrender.com' }));
+app.use(cors({ origin: 'https://jefffroehlich.github.io/' }));
 app.use(express.json());
 app.listen(port, () => console.log('Example app listening on port 3000!'));
 
