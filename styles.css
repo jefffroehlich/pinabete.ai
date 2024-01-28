@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #040404;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.88);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #df2ffe;
+  transition: border-color 0.3s ease-in-out;
+  animation: slideIn 1s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#response-container {
+  border: 1px solid #ced4da;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+  opacity: 1;
+  animation: fadeIn 1s ease-in-out, slideIn 0.5s ease-in-out 0.5s;
+  color: #000000;
+}
+
+#response-container:hover {
+  border-color: #475c7e;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.input-group,
+.button-group {
+  margin-bottom: 20px;
+}
+
+.input-group:hover,
+.button-group:hover {
+  border-color: #475c7e;
+}
+
+input#input-el.form-control {
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #2c3a4e;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  outline: none; /* Remove the default outline on focus */
+}
+
+input#input-el.form-control:hover {
+  border-color: #475c7e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input#input-el.form-control:focus {
+  outline: none; /* Remove the default outline on focus */
+  box-shadow: none; /* Remove any default box shadow on focus */
+}
+button#btn-el.btn-primary {
+  border-radius: 5px;
+  background-color: #df2ffe;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button#btn-el.btn-primary:hover {
+  background-color: #000000; /* Change to purple on hover */
+}
+
+.brand-container {
+  text-align: center;
+  margin-bottom: auto;
+  margin-top: auto;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.brand {
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff; /* Text color for the title */
+  margin-bottom: 0;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.brand-container:hover .brand i,
+.rotate-on-load {
+  transform: rotate(720deg);
+  transition: transform 2.2s ease-in-out;
+}
+
+.brand-container:hover .brand {
+  color: #df2ffe;
+  text-shadow: 0 0 10px rgba(44, 58, 78, 0.5);
+}
+
+.button-group button {
+  background-color: #475c7e;
+  color: #fff;
+  border-color: #475c7e;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button-group button:hover {
+  background-color: #2c3a4e;
+}
+
+.brand-container {
+  text-align: center;
+  margin-bottom: 30px;
+  transition: color 0.3s ease-in-out;
+}
+
+.brand {
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #3d5167;
+  margin-bottom: 0;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.brand-container:hover .brand {
+  color: #2c3a4e;
+  text-shadow: 0 0 10px rgba(44, 58, 78, 0.5); /* Subtle glow behind the font on hover */
+}
+
+/* Keyframe animations */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.brand-container:hover .brand i {
+  transform: rotate(
+    360deg
+  ); /* Rotate the icon 720 degrees on hover (2 full rotations) */
+  transition: transform 2.2s ease-in-out; /* Slow down the rotation */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #040404;
+  padding: 10px 20px;
+  z-index: 1000; /* Set a high z-index to ensure the navbar is above other content */
+}
+
+.logo {
+  color: #df2ffe; /* Logo text color */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: #fff; /* Navbar links text color */
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #df2ffe; /* Highlighter purple on link hover */
+}
+
+.user-actions a {
+  color: #fff; /* User actions text color */
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.user-actions a:hover {
+  background-color: #df2ffe; /* Darker shade on hover */
+}
+
+.prompt {
+  background-color: #df2ffe5a;
+
+  border: 3px solid #adb2b7;
+  padding: 6px;
+  border-radius: 10px;
+  margin-top: 8px;
+  opacity: 1;
+}
+.response {
+  border: 3px solid #adb2b7;
+  padding: 6px;
+  border-radius: 10px;
+  margin-top: 8px;
+  opacity: 1;
+}
