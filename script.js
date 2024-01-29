@@ -4,6 +4,8 @@ const urlLive = 'https://pinabete-ai.onrender.com/sendUserInput';
 const inputEl = document.getElementById('input-el');
 const btnEl = document.getElementById('btn-el');
 
+console.log('process.env.NODE_ENV is' + process.env.NODE_ENV);
+
 btnEl.addEventListener('click', () => {
   sendData(inputEl.value);
   inputEl.value = '';
