@@ -1,3 +1,15 @@
+const corsUrlDev = 'http://127.0.0.1:5500';
+const corsUrlLive = 'https://jefffroehlich.github.io';
+let corsUrl = '';
+
+if ((process.env.NODE_ENV || '').trim() !== 'production') {
+  corsUrl = corsUrlDev;
+} else {
+  corsUrl = corsUrlLive;
+}
+
+console.log(corsUrl);
+
 import { config } from 'dotenv';
 config();
 
@@ -8,10 +20,12 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-const port = process.env.PORT;
-app.use(cors({ origin: 'https://jefffroehlich.github.io' }));
+const port = process.env.PORT || 3000;
+app.use(cors({ origin: corsUrl }));
 app.use(express.json());
-app.listen(port, () => console.log('Example app listening on port 3000!'));
+app.listen(port, () => console.log('Example app listening!'));
+
+console.log(process.env.NODE_ENV);
 
 app.get('/', (req, res) => {
   res.send('serving is running successfully');

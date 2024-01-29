@@ -1,3 +1,6 @@
+const urlDev = 'http://localhost:3000/sendUserInput';
+const urlLive = 'https://pinabete-ai.onrender.com/sendUserInput';
+
 const inputEl = document.getElementById('input-el');
 const btnEl = document.getElementById('btn-el');
 
@@ -19,19 +22,16 @@ let clientSideMessage = [];
 async function sendData(userInput) {
   clientSideMessage.push({ role: 'user', content: userInput });
 
-  const response = await fetch(
-    'https://pinabete-ai.onrender.com/sendUserInput',
-    {
-      method: 'POST',
-      body: JSON.stringify({
-        id: 1,
-        message: clientSideMessage,
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    }
-  );
+  const response = await fetch(urlLive, {
+    method: 'POST',
+    body: JSON.stringify({
+      id: 1,
+      message: clientSideMessage,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
   if (response.ok) {
     const data = await response.json();
     clientSideMessage.push({ role: 'assistant', content: data });
